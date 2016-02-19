@@ -1,7 +1,7 @@
 {
-  "name": "etsy-soapitica-search",
+  "name": "etsy-native-search",
   "version": "1.0.0",
-  "description": "search the soapitica store",
+  "description": "andriod search the soapitica store",
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && cross-env NODE_ENV=development webpack --config webpack.config.dev.js",
