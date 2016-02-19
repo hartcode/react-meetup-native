@@ -8,4 +8,4 @@ android:
     - sys-img-x86-addon-google_apis-google-23
     - extra-android-m2repository
 before-install: cd etsy-android
-script: gradle build connectedCheck
+script: gradle build 

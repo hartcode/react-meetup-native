@@ -1,6 +1,6 @@
-.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
-.DS_Store
-/build
+etsy-android/.gradle
+etsy-android/local.properties
+etsy-android/.idea/workspace.xml
+etsy-android/.idea/libraries
+etsy-android/.DS_Store
+etsy-android/build
