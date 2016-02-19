@@ -9,6 +9,7 @@ function requestData() {
 }
 
 function receiveData(data) {
+  console.log('receiveData');
     return {
         type: ActionTypes.RECEIVE_DATA,
         payload: data
