@@ -41,7 +41,9 @@ android {
             include "armeabi-v7a", "x86"
         }
     }
-	
+	lintOptions {
+      warning 'InvalidPackage'
+    }
     buildTypes {
         release {
             minifyEnabled false
