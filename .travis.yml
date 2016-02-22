@@ -11,6 +11,7 @@ before_install:
     - cd android
     - sudo apt-get -qq update 
     - sudo apt-get install -y nodejs
+    - node -v
     - npm install -g react-native-cli
     - npm install
     - echo no | android create avd --force -n test -t android-23 --abi armeabi-v7a
