@@ -9,6 +9,8 @@ android:
     - extra-android-m2repository
 before_install: 
     - cd android
+    - sudo apt-get update -qq
+    - sudo apt-get install -qq nodejs
     - echo no | android create avd --force -n test -t android-23 --abi armeabi-v7a
     - emulator -avd test -no-audio -no-window &
     - android-wait-for-emulator
