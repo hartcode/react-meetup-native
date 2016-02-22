@@ -11,9 +11,13 @@ android:
     - extra-android-m2repository
 before_install: 
     - cd android
-    - curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
     - sudo apt-get -qq update 
-    - sudo apt-get install -y nodejs
+    - sudo apt-get install -y build-essential libssl-dev
+    - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+    - source ~/.profile
+    - nvm ls
+    - nvm install 4.1
+    - nvm use 4.1
     - node -v
     - npm install -g react-native-cli
     - npm install
