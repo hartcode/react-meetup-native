@@ -1,6 +1,2 @@
-etsy-android/.gradle
-etsy-android/local.properties
-etsy-android/.idea/workspace.xml
-etsy-android/.idea/libraries
-etsy-android/.DS_Store
-etsy-android/build
+node_modules
+*.log
