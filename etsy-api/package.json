@@ -47,5 +47,6 @@
     "webpack-hot-middleware": "2.6.4"
   },
   "dependencies": {
+    "cors": "^2.7.1"
   }
 }
