@@ -37,6 +37,13 @@ router.get('/listings', function(req, res) {
 	});
 });
 */
+
+router.get('/images', function(req, res) {
+	res.status(200);
+	var id = req.query.id;
+	res.send(mock.images);
+});
+
 apiApp.use('/api/', router);
 
 
