@@ -12,7 +12,8 @@ export default class Item extends Component {
 
   
  componentDidMount() {
-     var API_URL = 'http://localhost:4090/api/images?id=' + this.props.id;
+     var API_URL = 'http://localhost:4090/api/images?id=' + this.props.listing_id;
+	 console.log(API_URL);
      this.props.fetchData(API_URL, ActionTypes.REQUEST_DATA);
   }
 
@@ -22,7 +23,7 @@ export default class Item extends Component {
     
     return (
       <div className="large-4 small-6 columns">
-        <img src={this.props.state.image}></img>
+        <img src={this.props.state.results[0].url_fullxfull}></img>
         <div className="panel">
           <h5>{item.title}</h5>
           <h6 className="subheader">{item.price}</h6>
