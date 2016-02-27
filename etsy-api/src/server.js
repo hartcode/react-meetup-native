@@ -10,9 +10,10 @@ var cors = require('cors')
 apiApp.use(cors());
 
 var ETSY_URL = 'openapi.etsy.com';
-var ETSY_PATH = '/v2/shops/12125241/listings/active?api_key=1tjzrujzwl7irsede06obkly';
 var ETSY_SHOP_ID = '12125241';
-var ETSY_API_KEY = '1tjzrujzwl7irsede06obkly';
+var ETSY_API_KEY = process.env.ETSY_API_KEY;
+var ETSY_PATH = '/v2/shops/' + ETSY_SHOP_ID + '/listings/active?api_key=' + ETSY_API_KEY;
+
 
 var mock = require('../mockApi');
 
@@ -42,6 +43,7 @@ router.get('/images', function(req, res) {
 	res.status(200);
 	var id = req.query.id;
 	res.send(mock.images);
+	console.log(ETSY_PATH);
 });
 
 apiApp.use('/api/', router);
