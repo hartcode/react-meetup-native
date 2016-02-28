@@ -16,5 +16,4 @@ export default function example(state = initialState, action) {
 	    default:
 	        return state;
     }
-
 }

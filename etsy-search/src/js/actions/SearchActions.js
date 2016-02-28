@@ -17,7 +17,6 @@ function receiveData(data) {
 }
 
 function receiveError(err) {
-    console.log(data);
     return {
         type: ActionTypes.RECEIVE_ERROR,
         payload: err,

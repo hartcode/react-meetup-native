@@ -4,3 +4,4 @@
 
 //billing
 module.exports.listing = require('./getShop.json');
+module.exports.images = require('./getImages.json');
