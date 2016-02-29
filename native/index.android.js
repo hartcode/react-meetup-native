@@ -11,7 +11,7 @@ import React, {
   View
 } from 'react-native';
 
-import Root from './search-native';
+import Root from './src/js/containers/Root';
 
 /*class ReactMeetupNativeProject extends Component {
 
