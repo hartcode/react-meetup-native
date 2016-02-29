@@ -1,4 +1,4 @@
-import React, { Component, StyleSheet, Text, View, PropTypes } from 'react-native';
+import React, { Component, StyleSheet, Text,Image, View, PropTypes } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as SearchActions from '../actions/SearchActions';
@@ -20,9 +20,12 @@ export default class Item extends React.Component {
   render() {
 
     const { item } = this.props;
-    //console.log(item.image);
-	    return (
+    return (
         <View style={styles.container}>
+		  <Image
+          source={{uri:'https://img1.etsystatic.com/124/0/12125241/il_fullxfull.887426207_k1e1.jpg'}}
+		  style={{width:75, height:75}}
+		  />
           <Text style={styles.title}>
 			  {item.title}
           </Text>
@@ -35,7 +38,6 @@ export default class Item extends React.Component {
 }
   const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',

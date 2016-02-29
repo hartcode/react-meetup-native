@@ -49,16 +49,15 @@ export function fetchData(url) {
 }
 
 export function fetchImage(item){
-  return (dispatch) => {
     console.log(item)
     console.log(item.listing_id)
-    fetch(API_URL+item.listing_id+'/images?api_key='+ETSY_API_KEY)
+	var url = API_URL+item.listing_id+'/images?api_key='+ETSY_API_KEY;
+	console.log(url);
+    fetch(url)
     .then((req) => req.json())
     .then((json) => {
         item.image = json.results[0];
-        console.log(item.image)
     })
     .catch((err) => dispatch(receiveError(err)));
-  }
 }
 
