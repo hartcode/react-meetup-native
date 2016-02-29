@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react-native';
 import Item from './Item';
 export default class Listing extends Component {
 
@@ -9,7 +9,7 @@ export default class Listing extends Component {
   render() {
 
     const { listing } = this.props;
-
+	if (listing && typeof listing !== 'undefined' && listing.length > 0) {
     return (
       <div>
       {listing.map(function(result, i) {
@@ -17,7 +17,13 @@ export default class Listing extends Component {
       })}    
       </div>
     );
+	}
+  else
+  {
+    return (<div/>)
   }
+  }
+
 }
 
 Listing.propTypes = {

@@ -9,7 +9,7 @@ export default class Listing extends Component {
   render() {
 
     const { listing } = this.props;
-	if (typeof listing !== 'undefined') {
+	if (listing && typeof listing !== 'undefined' && listing.length > 0) {
     return (
       <div>
       {listing.map(function(result, i) {
@@ -18,7 +18,12 @@ export default class Listing extends Component {
       </div>
     );
 	}
+  else
+  {
+    return (<div/>)
   }
+  }
+
 }
 
 Listing.propTypes = {
