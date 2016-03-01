@@ -10,13 +10,6 @@ export default class Item extends Component {
 	
   }
 
- /* 
- componentDidMount() {
-     var API_URL = 'http://localhost:4090/api/images?id=' + this.props.item.listing_id;
-	 console.log(API_URL);
-     this.props.fetchData(API_URL, ActionTypes.REQUEST_DATA);
-  }*/
-
   render() {
 
     const { item } = this.props;
