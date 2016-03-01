@@ -25,16 +25,11 @@ export default class Listing extends React.Component {
     return (<View/>)
   }
   }
-
 }
-
-Listing.propTypes = {
-    results: PropTypes.object.isRequired 
-};
 
 var styles = StyleSheet.create({
   scrollView: {
-	height: 640,
+	height: 550,
 	paddingTop: 10,
 	paddingBottom: 10
   },
