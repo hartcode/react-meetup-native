@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, ScrollView, StyleSheet,View, PropTypes } from 'react-native';
 import Item from './Item';
-export default class Listing extends Component {
+export default class Listing extends React.Component {
 
   constructor(props, context) {
     super(props, context);
@@ -11,16 +11,18 @@ export default class Listing extends Component {
     const { listing } = this.props;
 	if (listing && typeof listing !== 'undefined' && listing.length > 0) {
     return (
-      <div>
+	<View style={styles.listingView}>
+	  <ScrollView style={styles.scrollView}>
       {listing.map(function(result, i) {
         return <Item item={result} key={i}/>;
       })}    
-      </div>
+      </ScrollView>
+	  </View>
     );
 	}
   else
   {
-    return (<div/>)
+    return (<View/>)
   }
   }
 
@@ -30,3 +32,13 @@ Listing.propTypes = {
     results: PropTypes.object.isRequired 
 };
 
+var styles = StyleSheet.create({
+  scrollView: {
+	height: 640,
+	paddingTop: 10,
+	paddingBottom: 10
+  },
+  listingView: {
+	
+  }
+});

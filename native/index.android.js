@@ -11,7 +11,10 @@ import React, {
   View
 } from 'react-native';
 
-class ReactMeetupNativeProject extends Component {
+import Root from './src/js/containers/Root';
+
+/*class ReactMeetupNativeProject extends Component {
+
   render() {
     return (
       <View style={styles.container}>
@@ -47,5 +50,5 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-
-AppRegistry.registerComponent('ReactMeetupNativeProject', () => ReactMeetupNativeProject);
+*/
+AppRegistry.registerComponent('ReactMeetupNativeProject', () => Root);

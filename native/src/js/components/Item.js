@@ -1,9 +1,9 @@
-import React, { Component, PropTypes } from 'react-native';
+import React, { Component, StyleSheet, Text,Image, View, PropTypes } from 'react-native';
 import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux/native';
+import { connect } from 'react-redux';
 import * as SearchActions from '../actions/SearchActions';
 import ActionTypes from '../constants/ActionTypes';
-export default class Item extends Component {
+export default class Item extends React.Component {
 
   constructor(props, context) {
     super(props, context);
@@ -20,28 +20,38 @@ export default class Item extends Component {
   render() {
 
     const { item } = this.props;
-    //console.log(item.image);
-	    return (
+    return (
         <View style={styles.container}>
-          <Text style={styles.welcome}>
-            Welcome to Soapitica!
+		  <Image
+          source={{uri:'https://img1.etsystatic.com/124/0/12125241/il_fullxfull.887426207_k1e1.jpg'}}
+		  style={{width:75, height:75}}
+		  />
+          <Text style={styles.title}>
+			  {item.title}
+          </Text>
+		  <Text style={styles.price}>
+			  {item.price}
           </Text>
          </View>
     );
   }
-
+}
   const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
+  title: {
     fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  price: {
+    fontSize: 15,
     textAlign: 'center',
     margin: 10,
   }
 });
-}
+
 
