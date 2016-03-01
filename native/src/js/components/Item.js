@@ -7,7 +7,6 @@ export default class Item extends React.Component {
 
   constructor(props, context) {
     super(props, context);
-	
   }
 
   render() {
@@ -15,11 +14,8 @@ export default class Item extends React.Component {
     const { item } = this.props;
     return (
         <View style={styles.container}>
-		  <Image
-          source={{uri:item.image.imageurl}}
-		  style={{width:75, height:75}}
-		  />
-          <Text style={styles.title}>
+	     <Image source={{uri:item.image.imageurl}} style={{width:75, height:75}} />
+		 <Text style={styles.title}>
 			  {item.title}
           </Text>
 		  <Text style={styles.price}>
