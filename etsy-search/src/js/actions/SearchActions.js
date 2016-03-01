@@ -1,13 +1,6 @@
 import ActionTypes from '../constants/ActionTypes';
 import fetch from 'isomorphic-fetch';
 
-var ETSY_URL = 'openapi.etsy.com';
-var ETSY_SHOP_ID = '12125241';
-var ETSY_API_KEY = '7xsp1p3sut5xz5yf17jyuxcj';
-var ETSY_LISTINGS_PATH = '/v2/shops/' + ETSY_SHOP_ID + '/listings/active?api_key=' + ETSY_API_KEY;
-var ETSY_IMAGES_PATH = '/v2/listings/';
-
-var API_URL = 'https://'+ETSY_URL+ETSY_IMAGES_PATH;
 function requestData() {
     return {
         type: ActionTypes.REQUEST_DATA,
@@ -39,24 +32,22 @@ export function fetchData(url) {
       .then((req) => req.json())
       .then((json) => {
 		      var results = json.results;
+			  var imageurls = [{imageurl:'https://img0.etsystatic.com/139/0/12125241/il_fullxfull.926740316_41gj.jpg'},
+			                {imageurl:'https://img1.etsystatic.com/114/0/12125241/il_fullxfull.917892587_rkfa.jpg'},
+							{imageurl:'https://img0.etsystatic.com/136/0/12125241/il_fullxfull.917871430_nk5z.jpg'},
+							{imageurl:'https://img0.etsystatic.com/124/0/12125241/il_fullxfull.918149086_ekql.jpg'},
+							{imageurl:'https://img1.etsystatic.com/109/0/12125241/il_fullxfull.917591777_jjoi.jpg'},
+							{imageurl:'https://img1.etsystatic.com/103/0/12125241/il_fullxfull.890991045_84bp.jpg'},
+							{imageurl:'https://img1.etsystatic.com/133/0/12125241/il_fullxfull.890983265_anlz.jpg'},
+							{imageurl:'https://img1.etsystatic.com/140/0/12125241/il_fullxfull.887630799_afhv.jpg'},
+							{imageurl:'https://img1.etsystatic.com/124/0/12125241/il_fullxfull.887426207_k1e1.jpg'}];
+		  var i = 0;
           results.forEach(function (item){
-            fetchImage(item)
+            item.image = imageurls[i];
+			i++;
           })
 		  dispatch(receiveData(json))
       })
       .catch((err) => dispatch(receiveError(err)));
   }
-}
-
-export function fetchImage(item){
-    console.log(item)
-    console.log(item.listing_id)
-	var url = API_URL+item.listing_id+'/images?api_key='+ETSY_API_KEY;
-	console.log(url);
-    fetch(url)
-    .then((req) => req.json())
-    .then((json) => {
-        item.image = json.results[0];
-    })
-    .catch((err) => dispatch(receiveError(err)));
 }

@@ -16,7 +16,7 @@ export default class Item extends Component {
     console.log(item.image);
 	    return (
       <div className="large-4 small-6 columns">
-        <img src={item.image.url_fullxfull}></img>
+        <img src={item.image.imageurl}></img>
         <div className="panel">
           <h5>{item.title}</h5>
           <h6 className="subheader">{item.price}</h6>

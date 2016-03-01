@@ -26,7 +26,3 @@ export default class Listing extends Component {
 
 }
 
-Listing.propTypes = {
-    results: PropTypes.object.isRequired 
-};
-
