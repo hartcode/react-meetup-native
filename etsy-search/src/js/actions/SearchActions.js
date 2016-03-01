@@ -1,7 +1,13 @@
 import ActionTypes from '../constants/ActionTypes';
 import fetch from 'isomorphic-fetch';
 
-var API_URL = 'http://localhost:4090/api/images?id=';
+var ETSY_URL = 'openapi.etsy.com';
+var ETSY_SHOP_ID = '12125241';
+var ETSY_API_KEY = '7xsp1p3sut5xz5yf17jyuxcj';
+var ETSY_LISTINGS_PATH = '/v2/shops/' + ETSY_SHOP_ID + '/listings/active?api_key=' + ETSY_API_KEY;
+var ETSY_IMAGES_PATH = '/v2/listings/';
+
+var API_URL = 'https://'+ETSY_URL+ETSY_IMAGES_PATH;
 function requestData() {
     return {
         type: ActionTypes.REQUEST_DATA,
@@ -43,16 +49,14 @@ export function fetchData(url) {
 }
 
 export function fetchImage(item){
-  return (dispatch) => {
     console.log(item)
     console.log(item.listing_id)
-    fetch(API_URL+item.listing_id)
+	var url = API_URL+item.listing_id+'/images?api_key='+ETSY_API_KEY;
+	console.log(url);
+    fetch(url)
     .then((req) => req.json())
     .then((json) => {
         item.image = json.results[0];
-        console.log(item.image)
     })
     .catch((err) => dispatch(receiveError(err)));
-  }
 }
-
