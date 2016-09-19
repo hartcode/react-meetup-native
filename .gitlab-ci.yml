@@ -19,4 +19,4 @@ sync_github:
    - echo "    IdentityFile /root/.ssh/github" >> /root/.ssh/config
    - echo "    StrictHostKeyChecking no" >> /root/.ssh/config
    - git fetch --prune
-   - git push --prune git@github.com:hartalex/react-test.git +refs/remotes/origin/*:refs/heads/* +refs/tags/*:refs/tags/* 
+   - git push --prune git@github.com:hartcode/react-meetup-native.git +refs/remotes/origin/*:refs/heads/* +refs/tags/*:refs/tags/* 
