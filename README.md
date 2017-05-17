@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/hartcode/react-meetup-native.svg?branch=master)](https://travis-ci.org/hartcode/react-meetup-native)
 [![Code Climate](https://codeclimate.com/github/hartcode/react-meetup-native/badges/gpa.svg)](https://codeclimate.com/github/hartcode/react-meetup-native)
 [![Test Coverage](https://codeclimate.com/github/hartcode/react-meetup-native/badges/coverage.svg)](https://codeclimate.com/github/hartcode/react-meetup-native/coverage)
-![Dependencies](https://david-dm.org/hartcode/react-meetup-native.svg)]
 
 # react-meetup-native 
 Basic example of taking a react/redux app and moving it to the andriod platform
