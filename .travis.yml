@@ -3,9 +3,11 @@ dist: precise
 sudo: required
 android:
   components:
+    - platform-tools
     - tools
     - build-tools-23.0.2
     - android-23
+    - sys-img-armeabi-v7a-android-23
     - extra-android-m2repository
   licenses:
     - 'android-sdk-preview-license-.+'
@@ -25,6 +27,7 @@ before_install:
     - node -v
     - npm install -g react-native-cli
     - npm install
+script: ./gradlew build
 addons:
   code_climate:
     repo_token: 88e230696fc91873bf0c15bee7de1fcdad7d63b351ffdeae823f68f14ef20f2a
