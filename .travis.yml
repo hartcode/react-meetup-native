@@ -1,23 +1,21 @@
 language: android
 sudo: required
-dist: trusty
 android:
   components:
-    - tools
     - build-tools-23.0.2
     - android-23
     - sys-img-armeabi-v7a-android-23
     - sys-img-x86-addon-google_apis-google-23
     - extra-android-m2repository
-before_install: 
+before_install:
     - cd native/android
-    - sudo apt-get -qq update 
+    - sudo apt-get -qq update
     - sudo apt-get install -y build-essential libssl-dev
     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
     - source ~/.profile
     - nvm ls-remote
-    - nvm install 5.6
-    - nvm use 5.6 
+    - nvm install 7.10
+    - nvm use 7.10
     - node -v
     - npm install -g react-native-cli
     - npm install
