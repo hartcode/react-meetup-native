@@ -1,12 +1,16 @@
 language: android
+dist: trusty
 sudo: required
 android:
   components:
-    - build-tools;23.0.3
+    - build-tools-23.0.2
     - android-23
     - sys-img-armeabi-v7a-android-23
-    - sys-img-x86-addon-google_apis-google-23
     - extra-android-m2repository
+  licenses:
+    - 'android-sdk-preview-license-.+'
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
 notifications:
     slack: hartcode:GqPCaLxnPqXfPJBMjJbEvG81
 before_install:
